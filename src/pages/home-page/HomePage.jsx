@@ -2,6 +2,7 @@ import { useState } from "react";
 import WebsiteLogoHeader from "../../components/WebsiteLogoHeader";
 import './HomePage.css';
 import JournalPrompts from "./JournalPrompts";
+import { useNavigate } from "react-router";
 
 function HomePage() {
     const [journalPrompts, setJournalPrompts] = useState([
@@ -133,10 +134,14 @@ function HomePage() {
         });
     }
 
+    const navigate = useNavigate();
+
+    const writeJournal = () => {
+        navigate(`/write`);
+    }
+
     return (
         <section className="home-page page">
-            <title>Cue</title>
-
             <WebsiteLogoHeader />
 
             <h2 className="greet-user-text">Hi, User👋</h2>
@@ -147,8 +152,11 @@ function HomePage() {
             <JournalPrompts selectedPromptId={selectedPromptId} setSelectedPromptId={setSelectedPromptId} promptsPerPage={promptsPerPage} startIndex={startIndex} journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />
 
             <div className="home-page-buttons-cont">
-                <button className="more-prompts-button" onClick={loadMorePrompts}>More Prompts</button>
-                <button className="add-prompt-button">Add Prompt</button>
+                <div>
+                    <button className="more-prompts-button button" onClick={loadMorePrompts}>More Prompts</button>
+                    <button className="add-prompt-button button">Add Prompt</button>
+                </div>
+                <button onClick={writeJournal} className={selectedPromptId !== null ? 'write-button' : ''} disabled={selectedPromptId === null}>Write</button>
             </div>
         </section>
     );

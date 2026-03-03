@@ -28,6 +28,7 @@ button {
     padding: 8px 22px;
     cursor: pointer;
     transition: 0.15s background-color, 0.15s border-color;
+    text-decoration: none;
 }
 
 button:hover {
@@ -42,6 +43,8 @@ button:hover {
 .home-page-buttons-cont {
     margin-top: 25px;
     margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
 }
 
 button:disabled {
