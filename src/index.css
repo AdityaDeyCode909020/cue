@@ -14,6 +14,6 @@ html {
 
 .page {
   background-color: var(--bg-color);
-  height: 100vh;
+  min-height: 100vh;
   padding: 2rem 3rem;
 }
