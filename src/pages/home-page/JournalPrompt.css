@@ -4,18 +4,12 @@
     padding: 1.4rem 2rem;
     margin-top: 20px;
     cursor: pointer;
-    transition: background-color 0.15s;
+    transition: border-color 0.15s;
+    font-size: 2.4rem;
+    font-family: Playfair, serif;
+    border: 1px solid var(--card-color);
 }
 
 .journal-prompt:hover {
-    background-color: var(--accent-color);
-}
-
-.journal-prompt:hover p {
-    color: white;
-}
-
-.journal-prompt p {
-    font-size: 2.4rem;
-    font-family: Playfair, serif;
+    border-color: var(--accent-color);
 }
