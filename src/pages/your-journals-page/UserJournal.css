@@ -3,6 +3,7 @@
     background-color: var(--card-color);
     border-radius: 4px;
     padding: 20px;
+    margin-bottom: 15px;
 }
 
 .user-journal h3 {
