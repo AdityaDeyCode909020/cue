@@ -1,0 +1,19 @@
+.greet-user-text {
+    font-family: "Abril Fatface", serif;
+    font-size: 3rem;
+    margin-top: 22px;
+}
+
+.heading-question, .heading-question-para {
+    font-family: Playfair, serif;
+}
+
+.heading-question {
+    font-size: 2.7rem;
+    margin-top: 10px;
+}
+
+.heading-question-para {
+    font-size: 2rem;
+    color: #3a2f2fa2;
+}
