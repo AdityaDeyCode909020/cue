@@ -1,0 +1,50 @@
+.write-journal-prompt {
+    font-size: 3rem;
+    font-family: Playfair, serif;
+    margin-top: 22px;
+}
+
+.ProseMirror {
+    height: 500px;
+    background-color: var(--card-color);
+    font-size: 2rem;
+    font-family: Playfair, serif;
+    padding: 2rem;
+    margin-top: 12px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.ProseMirror:focus {
+    outline: none;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #999;
+  pointer-events: none;
+  height: 0;
+}
+
+.ProseMirror ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.ProseMirror li {
+  margin-bottom: 4px;
+}
+
+.save-journal-button, .back-to-home-button {
+    margin-top: 15px;
+}
+
+.back-to-home-button {
+    margin-left: 10px;
+}
