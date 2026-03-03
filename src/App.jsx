@@ -116,10 +116,12 @@ function App() {
         { id: 100, promptQuestion: "What does my best self look like?" }
     ]);
 
+    const [userJournals, setUserJournals] = useState([]);
+
   return (
     <Routes>
       <Route index element={<HomePage journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />} />
-      <Route path="/write" element={<WritePage journalPrompts={journalPrompts} />} />
+      <Route path="/write" element={<WritePage userJournals={userJournals} setUserJournals={setUserJournals} journalPrompts={journalPrompts} />} />
     </Routes>
   );
 }
