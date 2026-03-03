@@ -5,7 +5,7 @@ import shuffleArray from "../../utils/arrayShuffle";
 export default function JournalPrompts({ visibleCount, setJournalPrompts, journalPrompts }) {
     useEffect(() => {
         setJournalPrompts(shuffleArray(journalPrompts));
-    }, [])
+    }, []);
 
     return (
         <div className="journal-prompts-container">

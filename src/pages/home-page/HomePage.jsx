@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WebsiteLogoHeader from "../../components/WebsiteLogoHeader";
 import './HomePage.css';
 import JournalPrompts from "./JournalPrompts";
@@ -119,6 +119,13 @@ function HomePage() {
                 : nextCount;
         });
     }
+
+    useEffect(() => {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+    }, [visibleCount]);
 
     return (
         <section className="home-page page">
