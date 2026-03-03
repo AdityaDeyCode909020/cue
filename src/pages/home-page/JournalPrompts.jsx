@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import JournalPrompt from "./JournalPrompt";
 import shuffleArray from "../../utils/arrayShuffle";
 import './JournalPrompts.css';
 
-export default function JournalPrompts({ visibleCount, setJournalPrompts, journalPrompts }) {
+export default function JournalPrompts({ selectedPromptId, setSelectedPromptId, setJournalPrompts, journalPrompts, startIndex, promptsPerPage }) {
     useEffect(() => {
         setJournalPrompts(shuffleArray(journalPrompts));
     }, []);
 
-    const [selectedPromptId, setSelectedPromptId] = useState(null);
-
     return (
         <div className="journal-prompts-container">
             {
-                journalPrompts.slice(0, visibleCount).map(journalPrompt => {
+                journalPrompts.slice(startIndex, startIndex + promptsPerPage).map(journalPrompt => {
                     return (
                         <JournalPrompt
                             key={journalPrompt.id}

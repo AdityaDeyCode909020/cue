@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import WebsiteLogoHeader from "../../components/WebsiteLogoHeader";
 import './HomePage.css';
 import JournalPrompts from "./JournalPrompts";
 
 function HomePage() {
-
-    const [visibleCount, setVisibleCount] = useState(4);
     const [journalPrompts, setJournalPrompts] = useState([
         { id: 1, promptQuestion: "How did I feel today and why?" },
         { id: 2, promptQuestion: "What made me smile today?" },
@@ -118,21 +116,22 @@ function HomePage() {
         { id: 100, promptQuestion: "What does my best self look like?" }
     ]);
 
+    const [startIndex, setStartIndex] = useState(0);
+    const promptsPerPage = 4;
+
+    const [selectedPromptId, setSelectedPromptId] = useState(null);
+
     function loadMorePrompts() {
-        setVisibleCount(prev => {
-            const nextCount = prev + 2;
-            return nextCount > journalPrompts.length
-                ? journalPrompts.length
-                : nextCount;
+        setSelectedPromptId(null);
+
+        setStartIndex(prev => {
+            const next = prev + promptsPerPage;
+            if (next >= journalPrompts.length) {
+                return 0;
+            }
+            return next;
         });
     }
-
-    useEffect(() => {
-        window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth"
-        });
-    }, [visibleCount]);
 
     return (
         <section className="home-page page">
@@ -145,10 +144,10 @@ function HomePage() {
             <h3 className="heading-question">What do you want to reflect on?</h3>
             <p className="heading-question-para">Choose your prompt.</p>
 
-            <JournalPrompts visibleCount={visibleCount} journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />
+            <JournalPrompts selectedPromptId={selectedPromptId} setSelectedPromptId={setSelectedPromptId} promptsPerPage={promptsPerPage} startIndex={startIndex} journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />
 
             <div className="home-page-buttons-cont">
-                <button className="more-prompts-button" onClick={loadMorePrompts} disabled={visibleCount >= journalPrompts.length}>More Prompts</button>
+                <button className="more-prompts-button" onClick={loadMorePrompts}>More Prompts</button>
                 <button className="add-prompt-button">Add Prompt</button>
             </div>
         </section>
