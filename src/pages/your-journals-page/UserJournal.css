@@ -1,0 +1,32 @@
+.user-journal {
+    font-family: Playfair, serif;
+    background-color: var(--card-color);
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.user-journal h3 {
+    font-size: 2.5rem;
+}
+
+.user-journal span {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-left: 12px;
+}
+
+.open-journal-button, .delete-journal-button {
+    font-size: 1.8rem;
+    padding: 0.5rem 2rem;
+}
+
+.delete-journal-button {
+    margin-left: 10px;
+}
+
+.user-journal p {
+    font-size: 1.8rem;
+    color: #3a2f2fde;
+    margin: 8px 0 15px 0;
+    line-height: 2.5rem;
+}

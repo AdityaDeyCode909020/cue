@@ -9,13 +9,13 @@ import { useState } from "react";
 export default function WritePage({ journalPrompts, setUserJournals, userJournals }) {
     const [searchParams] = useSearchParams();
     const promptId = searchParams.get('promptId');
+    const navigate = useNavigate();
 
-    const [journalText, setJournalText] = useState('');
     const [isEmpty, setIsEmpty] = useState(true)
 
     let selectedPrompt;
     for (let prompt of journalPrompts) {
-        if (prompt.id === Number(promptId)) {
+        if (prompt.id === promptId) {
             selectedPrompt = prompt;
         }
     }
@@ -37,11 +37,25 @@ export default function WritePage({ journalPrompts, setUserJournals, userJournal
         if (!editor) return;
 
         const html = editor.getHTML();
+        const text = editor.getText();
 
-        console.log(userJournals);
+        const newUserJournals = [
+            {
+                promptQuestion: selectedPrompt.promptQuestion,
+                answerJournal: JSON.stringify(html),
+                promptQuestionId: promptId,
+                userJournalId: crypto.randomUUID(),
+                answerJournalAsText: text,
+            },
+            ...userJournals
+        ]
+
+        setUserJournals(newUserJournals);
+
+        navigate('/your-journals');
     }
 
-    const navigate = useNavigate();
+    
 
     if (!editor) return null
 
@@ -57,7 +71,7 @@ export default function WritePage({ journalPrompts, setUserJournals, userJournal
 
             <EditorContent editor={editor} />
 
-            <button className="save-journal-button" onClick={handleSave} disabled={!editor || editor.isEmpty}>Save Journal</button>
+            <button className="save-journal-button" onClick={handleSave} disabled={!editor || isEmpty}>Save Journal</button>
             <button className="back-to-home-button" onClick={backToHome}>Back To Home</button>
         </section>
     );
