@@ -43,3 +43,8 @@ button:hover {
     margin-top: 25px;
     margin-bottom: 25px;
 }
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
