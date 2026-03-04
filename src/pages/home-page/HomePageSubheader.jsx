@@ -23,7 +23,7 @@ export default function HomePageSubheader({ userName }) {
             </div>
             <div className="rhs">
                 <MyPromptsButton />
-                <button className="your-journals-button subheader-button" onClick={goToUserJournals}>Your Journals</button>
+                <button className="your-journals-button subheader-button" onClick={goToUserJournals}>My Journals</button>
             </div>
         </div>
     );

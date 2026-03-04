@@ -1,7 +1,6 @@
 .home-page-subheader .lhs {
     display: flex;
     align-items: center;
-    margin-top: 22px;
 }
 
 .greet-user-text {
@@ -14,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 22px;
 }
 
 .your-journals-button {
