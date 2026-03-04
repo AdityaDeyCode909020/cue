@@ -3,9 +3,11 @@ import { useState } from "react";
 import HomePage from "./pages/home-page/HomePage";
 import WritePage from "./pages/write-page/WritePage";
 import YourJournalsPage from "./pages/your-journals-page/YourJournalsPage";
+import AddPromptPage from "./pages/add-prompt-page/AddPromptPage";
+import YourPromptsPage from "./pages/your-prompts-page/YourPromptsPage";
 
 function App() {
-  const [journalPrompts, setJournalPrompts] = useState([
+  const [journalPrompts, setJournalPrompts] = useState(JSON.parse(localStorage.getItem('cue-journal-prompts')) || [
     { id: "550e8400-e29b-41d4-a716-446655440001", promptQuestion: "How did I feel today and why?" },
     { id: "550e8400-e29b-41d4-a716-446655440002", promptQuestion: "What made me smile today?" },
     { id: "550e8400-e29b-41d4-a716-446655440003", promptQuestion: "What challenged me today?" },
@@ -124,6 +126,8 @@ function App() {
       <Route index element={<HomePage journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />} />
       <Route path="/write" element={<WritePage userJournals={userJournals} setUserJournals={setUserJournals} journalPrompts={journalPrompts} />} />
       <Route path="/your-journals" element={<YourJournalsPage userJournals={userJournals} setUserJournals={setUserJournals} />} />
+      <Route path="/add-prompt" element={<AddPromptPage journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />}/>
+      <Route path="/your-prompts" element={<YourPromptsPage journalPrompts={journalPrompts} />} />
     </Routes>
   );
 }

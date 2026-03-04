@@ -6,7 +6,7 @@ export default function JournalPrompt({ journalPrompt, setSelectedPromptId, isSe
     }
 
     return (
-        <div className={`journal-prompt ${isSelected ? 'selected-prompt' : ''}`} onClick={selectPrompt}>
+        <div className={`journal-prompt ${journalPrompt.isByUser ? 'user-journal-prompt' : ''} ${isSelected ? 'selected-prompt' : ''}`} onClick={selectPrompt}>
             {journalPrompt.promptQuestion}
         </div>
     );

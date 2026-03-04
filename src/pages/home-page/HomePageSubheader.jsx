@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router';
+import MyPromptsButton from '../../components/MyPromptsButton';
 import './HomePageSubheader.css';
 
 export default function HomePageSubheader() {
@@ -16,7 +17,10 @@ export default function HomePageSubheader() {
                 </h2>
                 <button className="edit-name-button subheader-button">Edit Name</button>
             </div>
-            <button className="edit-name-button subheader-button" onClick={goToUserJournals}>Your Journals</button>
+            <div className="rhs">
+                <MyPromptsButton />
+                <button className="your-journals-button subheader-button" onClick={goToUserJournals}>Your Journals</button>
+            </div>
         </div>
     );
 }

@@ -6,8 +6,6 @@ import { useNavigate } from "react-router";
 import HomePageSubheader from "./HomePageSubheader";
 
 function HomePage({ journalPrompts, setJournalPrompts }) {
-
-
     const [startIndex, setStartIndex] = useState(0);
     const promptsPerPage = 4;
 
@@ -31,6 +29,10 @@ function HomePage({ journalPrompts, setJournalPrompts }) {
         navigate(`/write?promptId=${selectedPromptId}`);
     }
 
+    const goToAddPromptPage = () => {
+        navigate('/add-prompt');
+    }
+
     return (
         <section className="home-page page">
             <WebsiteLogoHeader />
@@ -45,7 +47,7 @@ function HomePage({ journalPrompts, setJournalPrompts }) {
             <div className="home-page-buttons-cont">
                 <div>
                     <button className="more-prompts-button button" onClick={loadMorePrompts}>More Prompts</button>
-                    <button className="add-prompt-button button">Add Prompt</button>
+                    <button className="add-prompt-button button" onClick={goToAddPromptPage}>Add Prompt</button>
                 </div>
                 <button onClick={writeJournal} className={selectedPromptId !== null ? 'write-button' : ''} disabled={selectedPromptId === null}>Write</button>
             </div>

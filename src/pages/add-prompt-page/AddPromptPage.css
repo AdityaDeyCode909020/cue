@@ -1,0 +1,17 @@
+h2 {
+    font-family: Playfair, serif;
+}
+
+input {
+    width: 100%;
+    background-color: var(--card-color);
+    border: none;
+    font-size: 2rem;
+    font-family: Playfair, serif;
+    padding: 1.4rem;
+    margin-bottom: 20px;
+}
+
+input:focus {
+    outline: none;
+}

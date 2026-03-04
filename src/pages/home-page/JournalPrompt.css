@@ -13,3 +13,8 @@
 .journal-prompt:hover {
     border-color: var(--accent-color);
 }
+
+.user-journal-prompt {
+    background-color: #f7e6d1;
+    border: 1px solid #f7e6d1;
+}
