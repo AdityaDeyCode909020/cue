@@ -35,7 +35,9 @@ export default function WritePage({ journalPrompts, setUserJournals, userJournal
 
     const editor = useEditor({
         extensions: [
-            StarterKit,
+            StarterKit.configure({
+                heading: false,
+            }),
             Placeholder.configure({
                 placeholder: `Write your answer to the journal prompt here...`,
             }),
