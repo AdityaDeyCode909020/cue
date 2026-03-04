@@ -123,7 +123,7 @@ function App() {
     <Routes>
       <Route index element={<HomePage journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />} />
       <Route path="/write" element={<WritePage userJournals={userJournals} setUserJournals={setUserJournals} journalPrompts={journalPrompts} />} />
-      <Route path="/your-journals" element={<YourJournalsPage userJournals={userJournals} />} />
+      <Route path="/your-journals" element={<YourJournalsPage userJournals={userJournals} setUserJournals={setUserJournals} />} />
     </Routes>
   );
 }
