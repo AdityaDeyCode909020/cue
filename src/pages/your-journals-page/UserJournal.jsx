@@ -12,6 +12,8 @@ export default function UserJournal({ userJournal, setUserJournals, userJournals
             }
         }
 
+        localStorage.setItem('cue-user-journals', JSON.stringify(newUserJournals));
+
         setUserJournals(newUserJournals);
     }
 

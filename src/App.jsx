@@ -117,7 +117,7 @@ function App() {
     { id: "550e8400-e29b-41d4-a716-446655440100", promptQuestion: "What does my best self look like?" }
   ]);
 
-  const [userJournals, setUserJournals] = useState([]);
+  const [userJournals, setUserJournals] = useState(JSON.parse(localStorage.getItem('cue-user-journals')) || []);
 
   return (
     <Routes>

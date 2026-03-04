@@ -1,9 +1,3 @@
-.greet-user-text {
-    font-family: "Abril Fatface", serif;
-    font-size: 3rem;
-    margin-top: 22px;
-}
-
 .heading-question, .heading-question-para {
     font-family: Playfair, serif;
 }
@@ -50,4 +44,8 @@ button:hover {
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+.edit-name-button {
+    margin-left: 10px;
 }

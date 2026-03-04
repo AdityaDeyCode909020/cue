@@ -1,0 +1,34 @@
+.home-page-subheader .lhs {
+    display: flex;
+    align-items: center;
+    margin-top: 22px;
+}
+
+.greet-user-text {
+    margin: 0;
+    font-family: "Abril Fatface", serif;
+    font-size: 3rem;
+}
+
+.home-subheader-button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: Playfair, serif;
+    color: var(--accent-color);
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 1.8rem;
+}
+
+.home-subheader-button:hover {
+    background-color: transparent;
+    border: none;
+    color: #d7b493;
+}
+
+.home-page-subheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

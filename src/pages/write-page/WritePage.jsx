@@ -63,6 +63,8 @@ export default function WritePage({ journalPrompts, setUserJournals, userJournal
             userJournal.answerJournalAsText = text;
             userJournal.editDate = dayjs().format('DD/MM/YYYY');
 
+            localStorage.setItem('cue-user-journals', JSON.stringify(userJournals));
+
             setUserJournals(userJournals);
         } else {
             const newUserJournals = [
@@ -77,10 +79,10 @@ export default function WritePage({ journalPrompts, setUserJournals, userJournal
                 ...userJournals
             ]
 
+            localStorage.setItem('cue-user-journals', JSON.stringify(newUserJournals));
+
             setUserJournals(newUserJournals);
         }
-
-
 
         navigate('/your-journals');
     }
