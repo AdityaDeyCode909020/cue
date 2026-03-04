@@ -14,9 +14,9 @@ export default function HomePageSubheader() {
                 <h2 className="greet-user-text">
                     Hi, User 👋
                 </h2>
-                <button className="edit-name-button home-subheader-button">Edit Name</button>
+                <button className="edit-name-button subheader-button">Edit Name</button>
             </div>
-            <button className="edit-name-button home-subheader-button" onClick={goToUserJournals}>Your Journals</button>
+            <button className="edit-name-button subheader-button" onClick={goToUserJournals}>Your Journals</button>
         </div>
     );
 }
