@@ -8,12 +8,7 @@
 
 .user-journal h3 {
     font-size: 2.5rem;
-}
-
-.user-journal span {
-    font-size: 2rem;
-    font-weight: normal;
-    margin-left: 12px;
+    overflow-wrap: anywhere;
 }
 
 .open-journal-button, .delete-journal-button {
@@ -25,9 +20,19 @@
     margin-left: 10px;
 }
 
+.user-journal .user-journal-content {
+    font-size: 1.9rem;
+    color: #3a2f2fde;
+    margin: 12px 0 15px 0;
+    line-height: 2.5rem;
+}
+
 .user-journal p {
     font-size: 1.8rem;
-    color: #3a2f2fde;
-    margin: 8px 0 15px 0;
-    line-height: 2.5rem;
+    margin-top: 5px;
+    color: rgba(58, 47, 47, 0.631);
+}
+
+.user-journal p span {
+    color: rgba(58, 47, 47, 0.631);
 }

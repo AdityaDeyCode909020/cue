@@ -2,6 +2,7 @@
     font-size: 3rem;
     font-family: Playfair, serif;
     margin-top: 22px;
+    overflow-wrap: anywhere;
 }
 
 .ProseMirror {
@@ -39,6 +40,10 @@
 
 .ProseMirror li {
   margin-bottom: 4px;
+}
+
+.ProseMirror a {
+  cursor: pointer;
 }
 
 .save-journal-button, .back-to-home-button {

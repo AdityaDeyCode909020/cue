@@ -2,16 +2,29 @@ import WebsiteLogoHeader from "../../components/WebsiteLogoHeader";
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import Placeholder from "@tiptap/extension-placeholder";
+import dayjs from "dayjs";
 import { useNavigate, useSearchParams } from "react-router";
 import './WritePage.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function WritePage({ journalPrompts, setUserJournals, userJournals }) {
     const [searchParams] = useSearchParams();
     const promptId = searchParams.get('promptId');
+    const userJournalId = searchParams.get('userJournalId');
     const navigate = useNavigate();
 
+    let userJournal;
+    if (userJournalId) {
+        for (let uj of userJournals) {
+            if (uj.userJournalId === userJournalId) {
+                userJournal = uj;
+            }
+        }
+    }
+
     const [isEmpty, setIsEmpty] = useState(true)
+
+    
 
     let selectedPrompt;
     for (let prompt of journalPrompts) {
@@ -30,8 +43,12 @@ export default function WritePage({ journalPrompts, setUserJournals, userJournal
         onUpdate: ({ editor }) => {
             setIsEmpty(editor.isEmpty)
         },
-        content: '',
+        content: userJournal ? userJournal.answerJournal : '',
     })
+
+    useEffect(() => {
+        setIsEmpty(editor.isEmpty);
+    }, [editor.isEmpty]);
 
     const handleSave = () => {
         if (!editor) return;
@@ -39,23 +56,34 @@ export default function WritePage({ journalPrompts, setUserJournals, userJournal
         const html = editor.getHTML();
         const text = editor.getText();
 
-        const newUserJournals = [
-            {
-                promptQuestion: selectedPrompt.promptQuestion,
-                answerJournal: JSON.stringify(html),
-                promptQuestionId: promptId,
-                userJournalId: crypto.randomUUID(),
-                answerJournalAsText: text,
-            },
-            ...userJournals
-        ]
+        if (userJournal) {
+            userJournal.answerJournal = html;
+            userJournal.answerJournalAsText = text;
+            userJournal.editDate = dayjs().format('DD/MM/YYYY');
 
-        setUserJournals(newUserJournals);
+            setUserJournals(userJournals);
+        } else {
+            const newUserJournals = [
+                {
+                    promptQuestion: selectedPrompt.promptQuestion,
+                    answerJournal: html,
+                    promptQuestionId: promptId,
+                    userJournalId: crypto.randomUUID(),
+                    answerJournalAsText: text,
+                    editDate: dayjs().format('DD/MM/YYYY'),
+                },
+                ...userJournals
+            ]
+
+            setUserJournals(newUserJournals);
+        }
+
+
 
         navigate('/your-journals');
     }
 
-    
+
 
     if (!editor) return null
 
