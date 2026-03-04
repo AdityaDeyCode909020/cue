@@ -34,3 +34,22 @@ html {
     border: none;
     color: #d7b493;
 }
+
+
+@media screen and (max-width: 442px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media screen and (max-width: 401px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 373px) {
+    html {
+        font-size: 48%;
+    }
+}

@@ -49,3 +49,37 @@ button:disabled {
 .edit-name-button {
     margin-left: 10px;
 }
+
+@media screen and (max-width: 580px) {
+    .home-page-write-button {
+        flex: 1;
+        margin-left: 10px;
+    }
+}
+
+
+@media screen and (max-width: 517px) {
+
+    .home-page-buttons-cont {
+        flex-direction: column;
+    }
+
+    .lhs-buttons {
+        display: flex;
+    }
+
+    .more-prompts-button {
+        flex: 1;
+    }
+
+    .add-prompt-button {
+        flex: 1;
+    }
+
+    .home-page-write-button {
+        flex: 1;
+        margin-left: 0;
+        margin-top: 12px;
+    }
+
+}

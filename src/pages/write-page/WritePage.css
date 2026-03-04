@@ -1,23 +1,23 @@
 .write-journal-prompt {
-    font-size: 3rem;
-    font-family: Playfair, serif;
-    margin-top: 22px;
-    overflow-wrap: anywhere;
+  font-size: 3rem;
+  font-family: Playfair, serif;
+  margin-top: 22px;
+  overflow-wrap: anywhere;
 }
 
 .ProseMirror {
-    height: 500px;
-    background-color: var(--card-color);
-    font-size: 2rem;
-    font-family: Playfair, serif;
-    padding: 2rem;
-    margin-top: 12px;
-    overflow-y: scroll;
-    scrollbar-width: none;
+  height: 500px;
+  background-color: var(--card-color);
+  font-size: 2rem;
+  font-family: Playfair, serif;
+  padding: 2rem;
+  margin-top: 12px;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .ProseMirror:focus {
-    outline: none;
+  outline: none;
 }
 
 .ProseMirror p.is-editor-empty:first-child::before {
@@ -46,10 +46,23 @@
   cursor: pointer;
 }
 
-.save-journal-button, .back-to-home-button {
-    margin-top: 15px;
+.save-journal-button,
+.back-to-home-button {
+  margin-top: 15px;
 }
 
-.back-to-home-button {
-    margin-left: 10px;
+.write-page-buttons-cont .back-to-home-button {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 525px) {
+  .write-page-buttons-cont {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .write-page-buttons-cont .back-to-home-button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }

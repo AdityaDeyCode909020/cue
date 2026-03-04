@@ -19,3 +19,37 @@
 .your-journals-button {
     margin-left: 20px;
 }
+
+
+
+
+@media screen and (max-width: 563px) {
+    .home-page-subheader .lhs {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .home-page-subheader .lhs .edit-name-button {
+        margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 695px) {
+    .home-page-subheader {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .home-page-subheader .rhs {
+        margin-top: 10px;
+    }
+
+    .home-page-subheader .rhs .your-journals-button {
+        margin-left: 10px;
+    }
+}
+
+

@@ -45,11 +45,11 @@ function HomePage({ journalPrompts, setJournalPrompts, userName }) {
             <JournalPrompts selectedPromptId={selectedPromptId} setSelectedPromptId={setSelectedPromptId} promptsPerPage={promptsPerPage} startIndex={startIndex} journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />
 
             <div className="home-page-buttons-cont">
-                <div>
+                <div className="lhs-buttons">
                     <button className="more-prompts-button button" onClick={loadMorePrompts}>More Prompts</button>
                     <button className="add-prompt-button button" onClick={goToAddPromptPage}>Add Prompt</button>
                 </div>
-                <button onClick={writeJournal} className={selectedPromptId !== null ? 'write-button' : ''} disabled={selectedPromptId === null}>Write</button>
+                <button onClick={writeJournal} className={`home-page-write-button ${selectedPromptId !== null ? 'write-button' : ''}`} disabled={selectedPromptId === null}>Write</button>
             </div>
         </section>
     );

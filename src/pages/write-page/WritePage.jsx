@@ -24,7 +24,7 @@ export default function WritePage({ journalPrompts, setUserJournals, userJournal
 
     const [isEmpty, setIsEmpty] = useState(true)
 
-    
+
 
     let selectedPrompt;
     for (let prompt of journalPrompts) {
@@ -103,8 +103,10 @@ export default function WritePage({ journalPrompts, setUserJournals, userJournal
 
             <EditorContent editor={editor} />
 
-            <button className="save-journal-button" onClick={handleSave} disabled={!editor || isEmpty}>Save Journal</button>
-            <button className="back-to-home-button" onClick={backToHome}>Back To Home</button>
+            <div className="write-page-buttons-cont">
+                <button className="save-journal-button" onClick={handleSave} disabled={!editor || isEmpty}>Save Journal</button>
+                <button className="back-to-home-button" onClick={backToHome}>Back To Home</button>
+            </div>
         </section>
     );
 }

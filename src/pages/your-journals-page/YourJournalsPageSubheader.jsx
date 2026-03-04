@@ -5,7 +5,7 @@ export default function YourJournalsPageSubheader({userName}) {
     return (
         <div className="yjp-subheader">
             <h2>{userName}'s Journals</h2>
-            <BackToHomeButton />
+            <BackToHomeButton className="yjp-subheader-back-button" />
         </div>
     );
 }

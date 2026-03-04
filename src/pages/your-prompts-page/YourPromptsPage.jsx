@@ -10,7 +10,7 @@ export default function YourPromptsPage({ journalPrompts, setJournalPrompts }) {
 
             <div className="ypp-subheader">
                 <h2>Your Prompts</h2>
-                <BackToHomeButton />
+                <BackToHomeButton className="back-button-ypp"/>
             </div>
 
             <UserPrompts journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />
