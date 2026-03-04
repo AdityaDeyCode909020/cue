@@ -127,7 +127,7 @@ function App() {
       <Route path="/write" element={<WritePage userJournals={userJournals} setUserJournals={setUserJournals} journalPrompts={journalPrompts} />} />
       <Route path="/your-journals" element={<YourJournalsPage userJournals={userJournals} setUserJournals={setUserJournals} />} />
       <Route path="/add-prompt" element={<AddPromptPage journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />}/>
-      <Route path="/your-prompts" element={<YourPromptsPage journalPrompts={journalPrompts} />} />
+      <Route path="/your-prompts" element={<YourPromptsPage journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />} />
     </Routes>
   );
 }

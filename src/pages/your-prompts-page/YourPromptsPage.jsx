@@ -3,7 +3,7 @@ import BackToHomeButton from "../../components/BackToHomeButton";
 import UserPrompts from "./UserPrompts";
 import './YourPromptsPage.css';
 
-export default function YourPromptsPage({ journalPrompts }) {
+export default function YourPromptsPage({ journalPrompts, setJournalPrompts }) {
     return (
         <section className="page your-prompts-page">
             <WebsiteLogoHeader />
@@ -13,7 +13,7 @@ export default function YourPromptsPage({ journalPrompts }) {
                 <BackToHomeButton />
             </div>
 
-            <UserPrompts journalPrompts={journalPrompts} />
+            <UserPrompts journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />
         </section>
     );
 }
