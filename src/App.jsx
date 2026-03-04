@@ -5,6 +5,7 @@ import WritePage from "./pages/write-page/WritePage";
 import YourJournalsPage from "./pages/your-journals-page/YourJournalsPage";
 import AddPromptPage from "./pages/add-prompt-page/AddPromptPage";
 import YourPromptsPage from "./pages/your-prompts-page/YourPromptsPage";
+import EditNamePage from "./pages/edit-name-page/EditNamePage";
 
 function App() {
   const [journalPrompts, setJournalPrompts] = useState(JSON.parse(localStorage.getItem('cue-journal-prompts')) || [
@@ -121,13 +122,16 @@ function App() {
 
   const [userJournals, setUserJournals] = useState(JSON.parse(localStorage.getItem('cue-user-journals')) || []);
 
+  const [userName, setUserName] = useState(localStorage.getItem('cue-user-name') || 'User');
+
   return (
     <Routes>
-      <Route index element={<HomePage journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />} />
+      <Route index element={<HomePage userName={userName} journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />} />
       <Route path="/write" element={<WritePage userJournals={userJournals} setUserJournals={setUserJournals} journalPrompts={journalPrompts} />} />
-      <Route path="/your-journals" element={<YourJournalsPage userJournals={userJournals} setUserJournals={setUserJournals} />} />
+      <Route path="/your-journals" element={<YourJournalsPage userName={userName} userJournals={userJournals} setUserJournals={setUserJournals} />} />
       <Route path="/add-prompt" element={<AddPromptPage journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />}/>
       <Route path="/your-prompts" element={<YourPromptsPage journalPrompts={journalPrompts} setJournalPrompts={setJournalPrompts} />} />
+      <Route path="/edit-name" element={<EditNamePage setUserName={setUserName} />} />
     </Routes>
   );
 }

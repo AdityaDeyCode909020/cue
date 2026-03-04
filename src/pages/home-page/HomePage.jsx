@@ -5,7 +5,7 @@ import JournalPrompts from "./JournalPrompts";
 import { useNavigate } from "react-router";
 import HomePageSubheader from "./HomePageSubheader";
 
-function HomePage({ journalPrompts, setJournalPrompts }) {
+function HomePage({ journalPrompts, setJournalPrompts, userName }) {
     const [startIndex, setStartIndex] = useState(0);
     const promptsPerPage = 4;
 
@@ -37,7 +37,7 @@ function HomePage({ journalPrompts, setJournalPrompts }) {
         <section className="home-page page">
             <WebsiteLogoHeader />
 
-            <HomePageSubheader />
+            <HomePageSubheader userName={userName} />
 
             <h3 className="heading-question">What do you want to reflect on?</h3>
             <p className="heading-question-para">Choose your prompt.</p>

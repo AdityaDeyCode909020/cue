@@ -1,5 +1,6 @@
 import { useState } from "react";
 import WebsiteLogoHeader from "../../components/WebsiteLogoHeader";
+import CancelButton from "../../components/CancelButton";
 import './AddPromptPage.css';
 import { useNavigate } from "react-router";
 
@@ -38,6 +39,7 @@ export default function AddPromptPage({ journalPrompts, setJournalPrompts }) {
             <input type="text" value={promptQuestionText} onChange={handleInputChange} placeholder="Enter your prompt question here."/>
 
             <button disabled={promptQuestionText.trim() === ''} className="create-prompt-button" onClick={createPromptQuestion}>Create</button>
+            <CancelButton />
         </section>
     );
 }
